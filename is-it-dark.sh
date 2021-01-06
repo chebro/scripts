@@ -1,8 +1,10 @@
 #! /bin/bash
 
-if [ $(date | cut -c 21) = A ] && [ $(date +"%H") -lt 7 ]; then
+# Check if it's dark outside
+
+if [ $(date +%p) = AM ] && [ $(date +%H) -lt 7 ]; then
     echo 1
-elif [ $(date | cut -c 21) = P ] && [ $(date +"%H") -lt 19 ]; then
+elif [ $(date +%p) = PM ] && [ $(date +%H) -lt 19 ]; then
     echo 1
 else
     echo 0
