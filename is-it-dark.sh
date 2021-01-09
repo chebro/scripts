@@ -4,7 +4,7 @@
 
 if [ $(date +%p) = AM ] && [ $(date +%H) -lt 7 ]; then
     echo 1
-elif [ $(date +%p) = PM ] && [ $(date +%H) -lt 19 ]; then
+elif [ $(date +%p) = PM ] && [ $(date +%H) -gt 18 ]; then
     echo 1
 else
     echo 0
